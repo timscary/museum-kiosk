@@ -1,0 +1,245 @@
+/* =========================
+   BASE TOUCH
+========================= */
+
+.gallery-touch-button,
+.gallery-touch-card,
+.gallery-viewer-button {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery-touch-button:active,
+.gallery-touch-card:active,
+.gallery-viewer-button:active {
+  transform: scale(0.97);
+  filter: brightness(1.12);
+}
+
+/* =========================
+   ACCORDION SIDEBAR
+========================= */
+
+.gallery-accordion-trigger {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:
+    background 0.25s ease,
+    border-left 0.25s ease;
+}
+
+.gallery-accordion-arrow {
+  transition: transform 0.28s ease;
+}
+
+.gallery-accordion-arrow.open {
+  transform: rotate(90deg);
+}
+
+.gallery-sublist {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transform-origin: top;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.gallery-sublist.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   SCROLL TOUCH FLUIDO
+========================= */
+
+.gallery-sidebar,
+.gallery-category-grid,
+.gallery-sub-scroll,
+.gallery-search-results {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+/* =========================
+   VIEWER STABILE
+========================= */
+
+.gallery-viewer-backdrop,
+.gallery-viewer-stable,
+.gallery-viewer-box-stable {
+  animation: none !important;
+}
+
+.gallery-viewer-backdrop {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery-viewer-box-enter,
+.gallery-viewer-content-enter,
+.gallery-arrow-button,
+.gallery-close-button {
+  animation: none !important;
+}
+
+/* =========================
+   VIEWER IMMAGINI / SWIPE
+========================= */
+
+.gallery-viewer-image-frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery-viewer-image {
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+.gallery-viewer-image.dragging {
+  animation: none !important;
+  transition: none !important;
+}
+
+.gallery-viewer-image.swipe-reset {
+  transition: transform 0.22s ease;
+}
+
+.gallery-viewer-image.slide-next {
+  animation: gallerySlideNext 0.42s ease both;
+}
+
+.gallery-viewer-image.slide-prev {
+  animation: gallerySlidePrev 0.42s ease both;
+}
+
+.gallery-viewer-image.swipe-exit-left {
+  animation: gallerySwipeExitLeft 0.24s ease both;
+}
+
+.gallery-viewer-image.swipe-exit-right {
+  animation: gallerySwipeExitRight 0.24s ease both;
+}
+
+@keyframes gallerySlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(90px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes gallerySlidePrev {
+  from {
+    opacity: 0;
+    transform: translateX(-90px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes gallerySwipeExitLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-140px) scale(0.97);
+  }
+}
+
+@keyframes gallerySwipeExitRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(140px) scale(0.97);
+  }
+}
+
+/* =========================
+   PDF / AUDIO TOUCH
+========================= */
+
+.gallery-pdf-wrapper,
+.gallery-pdf-viewer {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.gallery-audio-viewer,
+.gallery-audio-player {
+  touch-action: manipulation;
+}
+
+/* =========================
+   HOVER SOLO MOUSE
+========================= */
+
+@media (hover: hover) {
+  .gallery-touch-button:hover,
+  .gallery-touch-card:hover,
+  .gallery-viewer-button:hover {
+    filter: brightness(1.08);
+  }
+}
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (pointer: coarse) {
+  .gallery-touch-button,
+  .gallery-touch-card,
+  .gallery-viewer-button,
+  .gallery-viewer-backdrop {
+    cursor: default;
+  }
+}
+
+/* =========================
+   ACCESSIBILITA
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-viewer-image.slide-next,
+  .gallery-viewer-image.slide-prev,
+  .gallery-viewer-image.swipe-exit-left,
+  .gallery-viewer-image.swipe-exit-right {
+    animation: none !important;
+  }
+
+  .gallery-accordion-trigger,
+  .gallery-accordion-arrow,
+  .gallery-sublist,
+  .gallery-viewer-image.swipe-reset {
+    transition: none !important;
+  }
+}
