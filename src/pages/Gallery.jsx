@@ -1649,6 +1649,7 @@ const styles = {
   display: "block",
   flexShrink: 0,
   pointerEvents: "none",
+  objectPosition: "center 15%"
 },
 
   subCatPlaceholder: {
@@ -1719,6 +1720,7 @@ const styles = {
   objectPosition: "top center",
   pointerEvents: "none",
   flexShrink: 0,
+  objectPosition: "center 15%"
 },
 
   sectionCardPlaceholder: {
