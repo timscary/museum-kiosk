@@ -1642,13 +1642,14 @@ const styles = {
   },
 
   subCatPreview: {
-    width: "100%",
-    height: 185,
-    objectFit: "cover",
-    display: "block",
-    flexShrink: 0,
-    pointerEvents: "none",
-  },
+  width: "100%",
+  height: 185,
+  objectFit: "cover",
+  objectPosition: "top center",
+  display: "block",
+  flexShrink: 0,
+  pointerEvents: "none",
+},
 
   subCatPlaceholder: {
     width: "100%",
@@ -1712,12 +1713,13 @@ const styles = {
   },
 
   sectionCardPreview: {
-    width: "100%",
-    height: 130,
-    objectFit: "cover",
-    pointerEvents: "none",
-    flexShrink: 0,
-  },
+  width: "100%",
+  height: 130,
+  objectFit: "cover",
+  objectPosition: "top center",
+  pointerEvents: "none",
+  flexShrink: 0,
+},
 
   sectionCardPlaceholder: {
     width: "100%",
